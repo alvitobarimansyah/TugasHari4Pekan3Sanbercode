@@ -36,6 +36,7 @@ df.groupby('Genre')[['NA_Sales', 'EU_Sales', 'JP_Sales', 'Other_Sales']].mean()
 
 # soal no 3
 
+import seaborn as sns
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -44,7 +45,7 @@ df = pd.read_csv('vgsales.csv')
 genre = df.groupby('Genre')[['NA_Sales', 'EU_Sales', 'JP_Sales', 'Other_Sales']].mean()
 result = genre.transpose()
 
-plt.style.use('seaborn')
+sns.set()
 
 fig, ax = plt.subplots(figsize = (12, 8))
 
@@ -75,7 +76,7 @@ ax.bar(x + 1.8, y10, width = 0.2, color = 'purple', label = 'Simulation')
 ax.bar(x + 2.0, y11, width = 0.2, color = 'gray', label = 'Sports')
 ax.bar(x + 2.2, y12, width = 0.2, color = 'orange', label = 'Strategy')
 
-ax.set_xticks(x)
+ax.set_xticks(x + 1.0)
 ax.set_xticklabels(result.index)
 
 fig.legend()

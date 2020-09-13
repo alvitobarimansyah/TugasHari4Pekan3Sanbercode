@@ -87,6 +87,7 @@ plt.show()
 
 # soal no 4
 
+import seaborn as sns
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -95,7 +96,7 @@ df = pd.read_csv('vgsales.csv')
 genre = df.groupby('Genre')[['NA_Sales', 'EU_Sales', 'JP_Sales', 'Other_Sales']].mean()
 result = genre.transpose()
 
-plt.style.use('seaborn')
+sns.set()
 
 fig, ax = plt.subplots(figsize = (12, 5))
 
